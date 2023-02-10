@@ -1,0 +1,46 @@
+version: '3.9'
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: dockerfiles/frontend.Dockerfile
+    ports:
+      - "4000:4000"
+    links:
+      - backend
+    restart: unless-stopped
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: dockerfiles/backend.Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - database
+    links:
+      - database
+    environment:
+      PORT: 3000
+      MONGO_URI: mongodb://db:27017
+      DB_NAME: application-database
+    restart: unless-stopped
+  database:
+    container_name: mongo-database
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+    volumes:
+      - storage:/data/db
+      - storage:/data/configdb
+  redis:
+    container_name: redis-cache
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+volumes:
+  storage:
+    name: application-database
