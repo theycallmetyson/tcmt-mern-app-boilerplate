@@ -20,6 +20,11 @@
   ],
   "author": "Tyson La",
   "license": "LICENSED",
+  "nodemonConfig": {
+    "execMap": {
+      "ts": "ts-node-esm"
+    }
+  },
   "dependencies": {
     "avanza": "^3.0.0",
     "compression": "^1.7.4",
