@@ -89,5 +89,5 @@ docker compose down
 ### Example:
 
 ```bash
-git commit -m "fix: squashed some bugs."
+git commit -m "fix: squashed some bugs"
 ```
