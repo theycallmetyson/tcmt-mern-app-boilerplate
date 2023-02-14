@@ -1,16 +1,41 @@
 import express, { Application, Request, Response, NextFunction } from 'express'
+import dotenv from 'dotenv'
+import compression from 'compression'
+import os from 'os'
+import cluster from 'cluster'
+import helmet from 'helmet'
 import bodyParser from 'body-parser'
+import logger from './config/winston/winstonSetup.js'
 
 const app: Application = express()
 const PORT = process.env.PORT || 3000
+dotenv.config()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Server running successfully...')
-})
+const numCPUs = os.cpus().length
 
-app.listen(PORT, () => {
-  console.log(`Server is running on PORT ${PORT}...`)
-})
+if (cluster.isPrimary) {
+  logger.info(`Started Primary cluster with ${numCPUs} workers`)
+
+  for (let i = 0; i < numCPUs; i += 1) {
+    cluster.fork()
+  }
+
+  cluster.on('exit', (worker, code, signal) => {
+    logger.warn(
+      `Worker ${worker.id} died with code: ${code} and signal: ${signal}`
+    )
+    logger.info('Starting a new worker')
+    cluster.fork()
+  })
+} else {
+  app.use(helmet())
+  app.use(compression())
+  app.use(express.json())
+
+  app.listen(PORT, () => {
+    logger.info(`Server is running on PORT ${PORT}...`)
+  })
+}
