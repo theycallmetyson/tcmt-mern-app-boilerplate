@@ -19,7 +19,7 @@
     "none"
   ],
   "author": "Tyson La",
-  "license": "UNLICENSED",
+  "license": "LICENSED",
   "dependencies": {
     "avanza": "^3.0.0",
     "compression": "^1.7.4",
@@ -34,6 +34,7 @@
     "winston": "^3.8.2"
   },
   "devDependencies": {
+    "@types/compression": "^1.7.2",
     "@types/express": "^4.17.17",
     "@types/node": "^18.13.0",
     "cross-env": "^7.0.3",
