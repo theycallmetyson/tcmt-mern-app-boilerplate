@@ -1,10 +1,11 @@
-import express, { Application, Request, Response, NextFunction } from 'express'
+import express, { Application } from 'express'
 import dotenv from 'dotenv'
 import compression from 'compression'
 import os from 'os'
 import cluster from 'cluster'
 import helmet from 'helmet'
 import bodyParser from 'body-parser'
+
 import logger from './config/winston/winstonSetup.js'
 
 const app: Application = express()
