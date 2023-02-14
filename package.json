@@ -13,6 +13,14 @@
       "@commitlint/config-conventional"
     ]
   },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "bracketSpacing": true,
+    "trailingComma": "none",
+    "arrowParens": "always",
+    "endOfLine": "lf"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.4.3",
     "@commitlint/config-conventional": "^17.4.3",
