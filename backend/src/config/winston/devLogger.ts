@@ -30,7 +30,7 @@ function buildDevLogger() {
       }),
       new transports.File({
         filename: path.join(__dirname, '../../logs/dev.log'),
-        level: 'warn'
+        level: 'error'
       })
     ]
   })

@@ -13,14 +13,14 @@ function buildProdLogger() {
       errors({ stack: true }),
       json()
     ),
-    level: 'info',
+    level: 'error',
     transports: [
       new transports.Console({
-        level: 'info'
+        level: 'error'
       }),
       new transports.File({
         filename: path.join(__dirname, '../../logs/prod.log'),
-        level: 'info'
+        level: 'error'
       })
     ]
   })
