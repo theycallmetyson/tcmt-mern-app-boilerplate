@@ -1,6 +1,7 @@
 {
   "name": "backend",
-  "version": "1.0.0",
+  "private": true,
+  "version": "0.0.0",
   "description": "none",
   "main": "scr/index.ts",
   "type": "module",
@@ -19,7 +20,7 @@
     "none"
   ],
   "author": "Tyson La",
-  "license": "LICENSED",
+  "license": "UNLICENSED",
   "nodemonConfig": {
     "execMap": {
       "ts": "ts-node-esm"

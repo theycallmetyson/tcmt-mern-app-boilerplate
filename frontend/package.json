@@ -2,6 +2,7 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
+  "description": "none",
   "type": "module",
   "scripts": {
     "build": "rimraf dist/ && tsc && vite build",
@@ -10,6 +11,15 @@
     "test": "cross-env NODE_ENV=test vitest",
     "test-ui": "cross-env NODE_ENV=test vitest --ui"
   },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Tyson La",
+  "license": "UNLICENSED",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
