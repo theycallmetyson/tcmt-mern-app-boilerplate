@@ -3,8 +3,8 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 const { colorize, combine, errors, printf, timestamp } = format
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 function buildDevLogger() {
   const logFormat = printf(
