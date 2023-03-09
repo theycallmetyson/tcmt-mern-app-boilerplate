@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "postinstall": "husky install && chmod ug+x .husky/* && chmod ug+x .git/hooks/*",
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix"
   },
