@@ -4,10 +4,10 @@ This is a simple boilerplate with [React](https://reactjs.org/) as frontend, [Ex
 
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/) to install all the dependencies separately in backend, frontend and the root folder.
+Use the package manager [npm](https://www.npmjs.com/) to install all the dependencies for both backend and frontend by running the command from the root folder.
 
 ```bash
-npm install
+npm run install
 ```
 
 ### Running local dev environment

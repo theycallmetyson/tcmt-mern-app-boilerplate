@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "install": "cd backend && npm install && cd ../frontend && npm install",
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix"
   },
