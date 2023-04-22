@@ -1,19 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "postinstall": "husky install && chmod ug+x .husky/* && chmod ug+x .git/hooks/*",
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm lint"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +31,7 @@
     "@commitlint/config-conventional": "^17.4.3",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
@@ -53,7 +43,6 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-sort": "^2.4.0",
-    "husky": "^8.0.3",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5"
   }
