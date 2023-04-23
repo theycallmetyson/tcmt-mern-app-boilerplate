@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "rimraf dist/ && tsc && vite build",
-    "dev": "cross-env NODE_ENV=dev vite --open",
-    "preview": "cross-env NODE_ENV=prod vite preview --open",
+    "dev": "cross-env NODE_ENV=dev vite --port 4000 --open",
+    "preview": "npm run build && cross-env NODE_ENV=prod vite preview --port 4000 --open",
     "test": "cross-env NODE_ENV=test vitest",
     "test-ui": "cross-env NODE_ENV=test vitest --ui"
   },
