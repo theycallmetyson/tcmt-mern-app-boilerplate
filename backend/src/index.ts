@@ -6,8 +6,8 @@ import cluster from 'cluster'
 import helmet from 'helmet'
 import bodyParser from 'body-parser'
 
-import logger from './config/winston/winstonSetup.js'
-import swagger from './middlewares/swagger/swaggerSetup.js'
+import logger from './config/winston/winston-setup.js'
+import swagger from './config/swagger/swagger-setup.js'
 
 const app: Application = express()
 const PORT = process.env.PORT || 3000
