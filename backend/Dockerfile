@@ -4,7 +4,7 @@ COPY backend/package*.json ./
 COPY backend/tsconfig*.json ./
 RUN npm ci --omit=optional --quiet
 COPY backend/ ./
-RUN npm run build
+RUN npm run build && rm -rf node_modules && npm install --only=production
 
 FROM node:alpine as ts-remover-backend
 WORKDIR /usr/app
