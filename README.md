@@ -6,11 +6,15 @@ This is a simple boilerplate with [React](https://reactjs.org/) as frontend, [Ex
 
 Use the package manager [npm](https://www.npmjs.com/) to install all the dependencies for both backend and frontend by running the command from the root folder.
 
+TIP: when you're in root folder and running this cmd, the cmd will run for both frontend and backend.
+
 ```bash
 npm run install
 ```
 
 ### Running local dev environment
+
+TIP: when you're in root folder and running this cmd, the cmd will run for both frontend and backend.
 
 ```bash
 npm run dev
@@ -18,7 +22,9 @@ npm run dev
 
 ### Preview prod
 
-Previews the compilated app. Remember to build before preview to see latest changes or if first time running preview.
+Build, compile and previews the compilated app.
+
+TIP: when you're in root folder and running this cmd, the cmd will run for both frontend and backend.
 
 ```bash
 npm run preview
@@ -40,7 +46,9 @@ npm run test-ui
 
 ### Build
 
-The build is going to delete any existing dist folder and then compile new one files in a new dist folder.
+The build is going to delete any existing dist folder and then compile new files in a new dist folder.
+
+TIP: when you're in root folder and running this cmd, the cmd will run for both frontend and backend.
 
 ```bash
 npm run build
