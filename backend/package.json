@@ -8,7 +8,7 @@
   "scripts": {
     "build": "rimraf dist/ && tsc",
     "dev": "cross-env NODE_ENV=dev nodemon src/index.ts",
-    "preview": "cross-env NODE_ENV=prod node dist/index.js",
+    "preview": "npm run build && cross-env NODE_ENV=prod node dist/index.js",
     "test": "cross-env NODE_ENV=test vitest",
     "test-ui": "cross-env NODE_ENV=test vitest --ui"
   },
