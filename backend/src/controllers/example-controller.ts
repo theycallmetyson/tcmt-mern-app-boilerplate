@@ -1,5 +1,6 @@
-const exampleFunction = (req, res) => {
-  res.status(200).json({ message: 'Hello World!' })
-}
+import { Request, Response } from 'express'
+import { sayHello } from '../services/example-service.js'
 
-export default exampleFunction
+export const exampleFunction = (req: Request, res: Response): void => {
+  sayHello(req, res)
+}

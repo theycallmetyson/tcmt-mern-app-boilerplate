@@ -4,7 +4,8 @@ import { fileURLToPath } from 'url'
 import swaggerUI from 'swagger-ui-express'
 import swaggerJSDoc from 'swagger-jsdoc'
 
-import exampleRoutes from '../../routes/example-route.js'
+import { exampleRouter } from '../../routes/example-route.js'
+import { Application } from 'express'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -27,11 +28,9 @@ const options = {
 
 const swaggerSpec = swaggerJSDoc(options)
 
-const swaggerSetup = (app) => {
+export const swagger = (app: Application) => {
   app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
   app.use(bodyParser.json())
 
-  app.use(exampleRoutes)
+  app.use(exampleRouter)
 }
-
-export default swaggerSetup
