@@ -5,6 +5,7 @@ import os from 'os'
 import cluster from 'cluster'
 import helmet from 'helmet'
 import bodyParser from 'body-parser'
+import { exampleRouter } from './routes/example-route.js'
 
 import { logger } from './config/winston/winston-setup.js'
 
@@ -19,6 +20,8 @@ const useSingleCore = () => {
   app.use(helmet())
   app.use(compression())
   app.use(express.json())
+
+  app.use('/api', exampleRouter)
 
   app.listen(PORT, () => {
     logger.info(`Server is running on PORT ${PORT}...`)
