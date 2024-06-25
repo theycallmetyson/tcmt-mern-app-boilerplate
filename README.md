@@ -9,7 +9,7 @@ Use the package manager [npm](https://www.npmjs.com/) to install all the depende
 TIP: when you're in root folder and running this cmd, the cmd will run for both frontend and backend.
 
 ```bash
-npm run install
+npm install
 ```
 
 ### Running local dev environment
